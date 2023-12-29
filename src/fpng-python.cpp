@@ -24,8 +24,8 @@ static PyObject* fpng_encode_image_to_memory(PyObject *self, PyObject *args)
         return Py_None;
     }
 
-    if (PyArray_NDIM(arrData) != 3){
-        PyErr_SetString(PyExc_ValueError, "Array NDIM > 3");
+    if (PyArray_NDIM(arrData) != 3 && PyArray_NDIM(arrData) != 4){
+        PyErr_SetString(PyExc_ValueError, "Array NDIM != 3/4");
         return NULL;
     }
 
@@ -66,8 +66,8 @@ static PyObject* fpng_encode_image_to_file(PyObject *self, PyObject *args)
         return Py_None;
     }
 
-    if (PyArray_NDIM(arrData) != 3){
-        PyErr_SetString(PyExc_ValueError, "Array NDIM > 3");
+    if (PyArray_NDIM(arrData) != 3 && PyArray_NDIM(arrData) != 4){
+        PyErr_SetString(PyExc_ValueError, "Array NDIM != 3/4");
         return NULL;
     }
 
