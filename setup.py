@@ -6,7 +6,7 @@ import numpy
 # Setup extension compile arguments
 extra_compile_args = ['-fno-strict-aliasing']
 # If on x86_64, enable SSE
-if platform.processor() == 'x86_64':
+if platform.processor() == 'x86_64' or True:
     extra_compile_args += ['-msse4.1', '-mpclmul']
 
 setup(
